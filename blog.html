@@ -11,7 +11,7 @@
     <!-- Header Part Starts -->
     <header>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
             <a class="navbar-brand" href="#"><h4 class="text-uppercase fw-bold">News 24</h4></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -35,7 +35,95 @@
     </header>
     <!-- Header Part Ends -->
     <main>
-
+        <section class="faq container">
+            <div class="text-center fw-bold">
+                <h2>Our Blog</h2>
+            </div>
+            <div class="card mt-5">
+                <div class="card-header bg-white">
+                    <h5>What are the Differences between Var, Let and Const?</h5>
+                </div>
+                <div class="card-body">
+                <table class="table table-striped bg-white">
+                    <thead>
+                      <tr class="text-center">
+                        <th scope="col"></th>
+                        <th scope="col">Var</th>
+                        <th scope="col">Let</th>
+                        <th scope="col">Const</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Variables declared with var are in the function scope.</td>
+                        <td>Variables declared as let are in the block scope.</td>
+                        <td>Variables declared as const are in the block scope.</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>You can define var variable before its declaration which is also called Hoisting.</td>
+                        <td>Hoisting is not allowed.</td>
+                        <td>Hoisting is not allowed.</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Variables with var can be redeclared</td>
+                        <td>Variables with let can not be redeclared</td>
+                        <td>Variables with const can not be redeclared</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+            <div class="card mt-5">
+                <div class="card-header bg-white">
+                    <h5>What are the Differences between Regular function Arrow function?</h5>
+                </div>
+                <div class="card-body">
+                <table class="table table-striped bg-white">
+                    <thead>
+                      <tr class="text-center">
+                        <th scope="col"></th>
+                        <th scope="col">Regular Function</th>
+                        <th scope="col">Arrow Function</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Regular functions created using function declarations or expressions are constructible and callable. Since regular functions are constructible, they can be called using the new keyword.</td>
+                        <td>The arrow functions are only callable and not constructible, i.e arrow functions can never be used as constructor functions.</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>In regular functions, arguments keywords can be used to access the passed arguments when the function is invoked.</td>
+                        <td>Arrow functions do not have their own arguments and it uses the arguments from the outer function.</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Regular functions created using function declarations or expressions are constructible and callable. Since regular functions are constructible, they can be called using the new keyword.</td>
+                        <td>The arrow functions are only callable and not constructible, i.e arrow functions can never be used as constructor functions.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+            <div class="card mt-5">
+                <div class="card-header bg-white">
+                    <h5>Why should we use template string?</h5>
+                </div>
+                <div class="card-body">
+                    <ul style="list-style: none;">
+                        <li class="my-4"><i class="fa-solid fa-pencil me-3"></i>Template strings are a powerful feature of modern JavaScript released in ES6. It lets us insert/interpolate variables and expressions into strings without needing to concatenate like in older versions of JavaScript. It allows us to create strings that are complex and contain dynamic elements.</li>
+                        <li class="my-4"><i class="fa-solid fa-pencil me-3"></i> Another great thing that comes with template strings are tags. Tags are functions that take a string and the decomposed parts of the string as parameters and are great for converting strings to different entities.</li>
+                        <li class="my-4"><i class="fa-solid fa-pencil me-3"></i> We insert a variable or expression by adding a dollar sign $ and curly braces {} into the string `${variable}`, which is much better than the alternative in old JavaScript</li>
+                        <li class="my-4"><i class="fa-solid fa-pencil me-3"></i> Another great feature of template strings is that we can have strings with multiple lines for better code readability. This cannot be done in an easy way with the old style of strings.</li>
+                        <li class="my-4"><i class="fa-solid fa-pencil me-3"></i> Template strings allow us to nest regular strings or template strings within template strings</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
 
 
@@ -43,5 +131,6 @@
 
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a88f4a8c14.js" crossorigin="anonymous"></script>
   </body>
 </html>

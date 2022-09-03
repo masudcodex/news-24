@@ -5,9 +5,7 @@ const loadCategoryName = () => {
     fetch(url)
     .then(res => res.json())
     .then(data => displayCategoryName(data.data.news_category))
-    // .catch(error){
-    //     console.log('error');
-    // }
+    .catch(error => console.log(error))
 
 };
 
@@ -32,16 +30,23 @@ const loadPosts = catId => {
     fetch(postUrl)
     .then(res => res.json())
     .then(data => displayPost(data.data))
-    // .catch(){
-    //     console.error();
-    // }
+    .catch(error => console.log(error))
 }
 
 // Posts Display
 
 const displayPost = categories => {
+    //Post Counter
+    const itemsCounter = document.getElementById('items-counter')
     const postCount = categories.length;
-    console.log(postCount);
+    if (postCount !== 0) {
+        itemsCounter.innerText = `${categories.length} items found`;
+    } else {
+        itemsCounter.innerText = `No item found`;
+    }
+    
+    //Post Display
+
     const postsContainer = document.getElementById('news-posts');
     postsContainer.innerHTML= ``;
     for (const category of categories) {
@@ -92,6 +97,7 @@ const loadSinglePost = news_id => {
     fetch(url)
     .then(res => res.json())
     .then(data => displaySinglePost(data.data[0]))
+    .catch(error => console.log(error))
 }
 
 //Single Post Display
