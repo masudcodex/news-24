@@ -37,7 +37,6 @@ const loadPosts = catId => {
 // Posts Display
 
 const displayPost = categories => {
-    console.log(categories);
     //Post Counter
     const itemsCounter = document.getElementById('items-counter')
     const postCount = categories.length;
@@ -51,9 +50,11 @@ const displayPost = categories => {
     
     //Post Display
 
+    const filter = document.getElementById('filterSelect');
     const postsContainer = document.getElementById('news-posts');
     postsContainer.innerHTML= ``;
     for (const category of categories) {
+        
         const createCard = document.createElement('div');
         createCard.classList.add('card');
         createCard.innerHTML = `
@@ -90,6 +91,14 @@ const displayPost = categories => {
             </div>
             </div>
         `;
+
+        // if(filter.value === view){
+        //     category.sort((a, b) => {
+        //         return b.total_view - a.total_view;
+        //     })
+        // }else{
+            
+        // }
         postsContainer.appendChild(createCard);
         toggleSpinner(false);
     }
@@ -108,7 +117,6 @@ const loadSinglePost = news_id => {
 //Single Post Display
 
 const displaySinglePost = newsPost => {
-    console.log(newsPost);
     const modalTitle = document.getElementById('postModalLabel');
     modalTitle.innerText = newsPost.title;
     const modalBody = document.getElementById('modal-body');
@@ -121,6 +129,11 @@ const displaySinglePost = newsPost => {
     </div>
     `;
 }
+
+//sorting filter
+// const filter = document.getElementById('filterSelect');
+// console.log(filter.);
+
 //Spinner
 const toggleSpinner = isLoading => {
     const loader = document.getElementById('loader');
