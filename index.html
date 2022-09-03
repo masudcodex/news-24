@@ -52,16 +52,13 @@
             <div class="container filter-nav d-flex justify-content-between
             ">
                 <div class="filter-left d-flex">
-                    <div class="sorting-text">Sort By View: </div>
+                    <div class="sorting-text">Sort By: </div>
                     <div class="sorting-filter ms-2">
                         <div class="dropdown">
-                            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Default
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">Default</a></li>
-                              <li><a class="dropdown-item" href="#">By View</a></li>
-                            </ul>
+                            <select class="form-select" id="filterSelect">
+                                <option value="default">Default</option>
+                                <option value="view">By view</option>
+                            </select>
                           </div>
                     </div>
                 </div>
