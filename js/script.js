@@ -37,7 +37,9 @@ const loadPosts = catId => {
 // Posts Display
 
 const displayPost = categories => {
+    
     //Post Counter
+    
     const itemsCounter = document.getElementById('items-counter')
     const postCount = categories.length;
     if (postCount !== 0) {
@@ -47,7 +49,6 @@ const displayPost = categories => {
         toggleSpinner(false);
     }
 
-    
     //Post Display
 
     const filter = document.getElementById('filterSelect');
@@ -122,10 +123,6 @@ const displaySinglePost = newsPost => {
     `;
 }
 
-//sorting filter
-// const filter = document.getElementById('filterSelect');
-// console.log(filter.);
-
 //Spinner
 const toggleSpinner = isLoading => {
     const loader = document.getElementById('loader');
@@ -135,6 +132,7 @@ const toggleSpinner = isLoading => {
         loader.classList.add('d-none')
     }
 }
+
 
 
 loadCategoryName();

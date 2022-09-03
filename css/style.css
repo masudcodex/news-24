@@ -3,7 +3,10 @@ body{
 }
 /* Navbar */
 .navbar-brand{
-    color: #5D5FEF;
+    color: #5D5FEF !important;
+}
+.navbar-brand:hover{
+    color: #5D5FEF !important;
 }
 .navbar-nav .nav-link.active {
     color: #5D5FEF;
@@ -19,9 +22,13 @@ body{
 }
 /* Navbar */
 
+/* filter */
 .sorting-text {
     margin-top: 5px;
 }
+/* filter */
+
+/* Posts */
 .card {
     margin: 15px 0;
 }
@@ -37,3 +44,4 @@ body{
 .read-more-icon {
     margin-right: 60px;
 }
+/* Posts */
