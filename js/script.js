@@ -53,6 +53,7 @@ const displayPost = categories => {
     const filter = document.getElementById('filterSelect');
     const postsContainer = document.getElementById('news-posts');
     postsContainer.innerHTML= ``;
+    categories.sort((a, b) => { return b.total_view - a.total_view});
     for (const category of categories) {
         const createCard = document.createElement('div');
         createCard.classList.add('card');
@@ -90,17 +91,7 @@ const displayPost = categories => {
             </div>
             </div>
         `;
-
-        if(filter.value === view){
-            postsContainer.appendChild(createCard.sort((a, b) => {
-                return b.total_view - a.total_view;
-            }))
-        }
-        // postsContainer.appendChild(createCard);
-        // if(filter.value === view){
-        //     category.sort((a, b) => {
-        //         return b.total_view - a.total_view;
-        // })
+        postsContainer.appendChild(createCard);
         toggleSpinner(false);
     }
 } 
