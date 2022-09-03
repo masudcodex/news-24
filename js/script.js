@@ -54,7 +54,6 @@ const displayPost = categories => {
     const postsContainer = document.getElementById('news-posts');
     postsContainer.innerHTML= ``;
     for (const category of categories) {
-        
         const createCard = document.createElement('div');
         createCard.classList.add('card');
         createCard.innerHTML = `
@@ -92,14 +91,16 @@ const displayPost = categories => {
             </div>
         `;
 
+        if(filter.value === view){
+            postsContainer.appendChild(createCard.sort((a, b) => {
+                return b.total_view - a.total_view;
+            }))
+        }
+        // postsContainer.appendChild(createCard);
         // if(filter.value === view){
         //     category.sort((a, b) => {
         //         return b.total_view - a.total_view;
-        //     })
-        // }else{
-            
-        // }
-        postsContainer.appendChild(createCard);
+        // })
         toggleSpinner(false);
     }
 } 
