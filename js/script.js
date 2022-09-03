@@ -26,6 +26,7 @@ const displayCategoryName = categories => {
 // Posts Load
 
 const loadPosts = catId => {
+    toggleSpinner(true);
     const postUrl = `https://openapi.programming-hero.com/api/news/category/${catId}`;
     fetch(postUrl)
     .then(res => res.json())
@@ -36,6 +37,7 @@ const loadPosts = catId => {
 // Posts Display
 
 const displayPost = categories => {
+
     //Post Counter
     const itemsCounter = document.getElementById('items-counter')
     const postCount = categories.length;
@@ -43,7 +45,9 @@ const displayPost = categories => {
         itemsCounter.innerText = `${categories.length} items found`;
     } else {
         itemsCounter.innerText = `No item found`;
+        toggleSpinner(false);
     }
+
     
     //Post Display
 
@@ -67,11 +71,11 @@ const displayPost = categories => {
                     <img src="${category.author.img}" alt="">
                     <div class="d-flex flex-column ms-1 mb-0">
                         <small class="fw-semibold text-muted">${category.author.name ? category.author.name : 'No Author found'}</small>
-                        <small class="fw-semibold text-muted">${category.author.published_date ? category.author.published_date : 'No data Available'}</small>
+                        <small class="fw-semibold text-muted">${category.author.published_date ? category.author.published_date : 'No data found'}</small>
                     </div>
                 </div>
                 <div class="view">
-                    <p class="fw-semibold text-muted"><i class="fa-regular fa-eye"></i><span class="ms-2">${category.total_view}</span></p>
+                    <p class="fw-semibold text-muted"><i class="fa-regular fa-eye"></i><span class="ms-2">${category.total_view ? category.total_view : 'No data found'}</span></p>
                 </div>
                 <div class="ratings text-muted">
                     <i class="fa-regular fa-star-half-stroke"></i>
@@ -87,6 +91,7 @@ const displayPost = categories => {
             </div>
         `;
         postsContainer.appendChild(createCard);
+        toggleSpinner(false);
     }
 } 
 
@@ -115,8 +120,15 @@ const displaySinglePost = newsPost => {
         <p class="fw-semibold text-muted ms-5"><i class="fa-regular fa-eye"></i><span class="ms-2">${newsPost.total_view ? newsPost.total_view : 'No data Available'}</span></p>
     </div>
     `;
-
-    
+}
+//Spinner
+const toggleSpinner = isLoading => {
+    const loader = document.getElementById('loader');
+    if (isLoading) {
+        loader.classList.remove('d-none');
+    } else {
+        loader.classList.add('d-none')
+    }
 }
 
 loadCategoryName();
