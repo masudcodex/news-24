@@ -17,7 +17,7 @@ const displayCategoryName = categories => {
         const li = document.createElement('li');
         li.classList.add('nav-item');
         li.innerHTML = `
-            <a onclick="loadPosts('${cat.category_id}')" class="nav-link cat" href="#">${cat.category_name}</a>
+            <a onclick="loadPosts('${cat.category_id}');" class="nav-link cat" href="#">${cat.category_name}</a>
         `;
         categoryContainer.appendChild(li);
     }
@@ -37,7 +37,7 @@ const loadPosts = catId => {
 // Posts Display
 
 const displayPost = categories => {
-
+    console.log(categories);
     //Post Counter
     const itemsCounter = document.getElementById('items-counter')
     const postCount = categories.length;
@@ -131,5 +131,6 @@ const toggleSpinner = isLoading => {
     }
 }
 
-loadCategoryName();
 
+loadCategoryName();
+loadPosts('01');
