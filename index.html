@@ -42,7 +42,7 @@
         </nav>
         <!-- Category Navbar -->
         <div class="container bg-white pt-3 pb-1 rounded-2 my-4">
-            <p class="fs-5 fw-semibold">4 items found for category Entertainment</p>
+            <p id="items-counter" class="fs-5 fw-semibold">4 items found for category Entertainment</p>
         </div>
     </header>
     <!-- Header Part Ends -->
@@ -73,43 +73,25 @@
         </section>
         <!-- News Filter -->
         <!-- News Post -->
-        <section id="news-posts">
-            <!-- <div class="card my-3">
-                <div class="row g-0">
-                  <div class="col-md-4 p-md-3">
-                    <img src="https://dummyimage.com/200x300/000/fff" class="img-fluid rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-8 d-flex flex-column pb-3">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="cardFooter pe-5 d-flex justify-content-between">
-                        <div class="author d-flex">
-                            <img src="images/Avatar.png" alt="">
-                            <div class="d-flex flex-column ms-1 mb-0">
-                                <small class="fw-semibold text-muted">Author Name</small>
-                                <small class="fw-semibold text-muted">Jan 10, 2022</small>
-                            </div>
-                        </div>
-                        <div class="view">
-                            <p class="fw-semibold text-muted"><i class="fa-regular fa-eye"></i><span class="ms-2">1.5M</span></p>
-                        </div>
-                        <div class="ratings text-muted">
-                            <i class="fa-regular fa-star-half-stroke"></i>
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <div class="read-more-icon">
-                            <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-        </section>
+        <section id="news-posts"></section>
         <!-- News Post -->
+        <!-- Modal -->
+        <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="postModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="modal-body" class="modal-body"></div>
+                <div id="modal-footer" class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        
     </main>
 
 

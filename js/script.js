@@ -1,3 +1,5 @@
+// Categoty Load
+
 const loadCategoryName = () => {
     const url = `https://openapi.programming-hero.com/api/news/categories`;
     fetch(url)
@@ -8,6 +10,9 @@ const loadCategoryName = () => {
     // }
 
 };
+
+// Category Display
+
 const displayCategoryName = categories => {
     const categoryContainer = document.getElementById('category-container');
     for (const cat of categories) {
@@ -20,6 +25,8 @@ const displayCategoryName = categories => {
     }
 }
 
+// Posts Load
+
 const loadPosts = catId => {
     const postUrl = `https://openapi.programming-hero.com/api/news/category/${catId}`;
     fetch(postUrl)
@@ -29,11 +36,15 @@ const loadPosts = catId => {
     //     console.error();
     // }
 }
+
+// Posts Display
+
 const displayPost = categories => {
+    const postCount = categories.length;
+    console.log(postCount);
     const postsContainer = document.getElementById('news-posts');
     postsContainer.innerHTML= ``;
     for (const category of categories) {
-        console.log(category);
         const createCard = document.createElement('div');
         createCard.classList.add('card');
         createCard.innerHTML = `
@@ -50,8 +61,8 @@ const displayPost = categories => {
                 <div class="author d-flex">
                     <img src="${category.author.img}" alt="">
                     <div class="d-flex flex-column ms-1 mb-0">
-                        <small class="fw-semibold text-muted">${category.author.name}</small>
-                        <small class="fw-semibold text-muted">${category.author.published_date}</small>
+                        <small class="fw-semibold text-muted">${category.author.name ? category.author.name : 'No Author found'}</small>
+                        <small class="fw-semibold text-muted">${category.author.published_date ? category.author.published_date : 'No data Available'}</small>
                     </div>
                 </div>
                 <div class="view">
@@ -64,7 +75,7 @@ const displayPost = categories => {
                     <i class="fa-regular fa-star"></i>
                 </div>
                 <div class="read-more-icon">
-                    <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+                    <a onclick="loadSinglePost('${category._id}')" href="#"  data-bs-toggle="modal" data-bs-target="#postModal"><i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             </div>
@@ -73,5 +84,34 @@ const displayPost = categories => {
         postsContainer.appendChild(createCard);
     }
 } 
+
+// Single Post Load
+
+const loadSinglePost = news_id => {
+    const url = `https://openapi.programming-hero.com/api/news/${news_id}`;
+    fetch(url)
+    .then(res => res.json())
+    .then(data => displaySinglePost(data.data[0]))
+}
+
+//Single Post Display
+
+const displaySinglePost = newsPost => {
+    console.log(newsPost);
+    const modalTitle = document.getElementById('postModalLabel');
+    modalTitle.innerText = newsPost.title;
+    const modalBody = document.getElementById('modal-body');
+    modalBody.innerHTML = `
+        <img src="${newsPost.image_url}" alt="">
+        <p class="mt-2">${newsPost.details}</p>
+        <div class="d-flex mt-3">
+        <p><b>Author:</b> ${newsPost.author.name ? newsPost.author.name : 'Author not found'}</p>
+        <p class="fw-semibold text-muted ms-5"><i class="fa-regular fa-eye"></i><span class="ms-2">${newsPost.total_view ? newsPost.total_view : 'No data Available'}</span></p>
+    </div>
+    `;
+
+    
+}
+
 loadCategoryName();
 

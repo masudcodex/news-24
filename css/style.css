@@ -26,14 +26,9 @@ button.dropdown-toggle{
 .card {
     margin: 15px 0;
 }
-/* .card-text {
-    display: inline-block;
-    width: 745px;
-    white-space: nowrap;
-    overflow: hidden !important;
-    text-overflow: ellipsis;
-} */
-
+.modal-body img{
+    width: 465px;
+}
 .author img {
     width: 30px;
     height: 30px;
