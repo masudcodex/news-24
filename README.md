@@ -1,2 +1,2 @@
-# news-24
-live site link: https://news-twentyfour.netlify.app/
+# News-24 (A newspaper website)
+Live site link: https://news-twentyfour.netlify.app/
